@@ -12,27 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DanilBurtov422PetAndDog.Components.DataBase;
-using DanilBurtov422PetAndDog.Components.Pages;
 
-namespace DanilBurtov422PetAndDog.Components
+using DanilBurtov422PetAndDog.Components.DataBase;
+
+namespace DanilBurtov422PetAndDog.Components.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PostUC.xaml
+    /// Логика взаимодействия для AddEditPostPage.xaml
     /// </summary>
-    public partial class PostUC : UserControl
+    public partial class AddEditPostPage : Page
     {
-        Posts posts;
-        public PostUC(Posts _posts)
+        public AddEditPostPage(Posts posts)
         {
             InitializeComponent();
-            posts = _posts;
+            PostCB.ItemsSource = App.db.PostRate.ToList();
+            PostCB.DisplayMemberPath = "Name";
             DataContext = posts;
         }
 
-        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GetNavigationService(this).Navigate(new AddEditPostPage(posts));
+            App.db.SaveChanges();
         }
     }
 }
