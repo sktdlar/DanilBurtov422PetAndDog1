@@ -12,20 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DanilBurtov422PetAndDog.Components.Pages;
+using DanilBurtov422PetAndDog.Components.DataBase;
 
-namespace DanilBurtov422PetAndDog
+namespace DanilBurtov422PetAndDog.Components
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PostUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PostUC : UserControl
     {
-        public MainWindow()
+        public PostUC(Posts posts)
         {
             InitializeComponent();
-            MainFrame.Navigate(new ContentPage());
-                
-                }
+            DataContext = posts;
+        }
     }
 }

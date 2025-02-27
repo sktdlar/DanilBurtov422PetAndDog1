@@ -6,9 +6,22 @@
       xmlns:local="clr-namespace:DanilBurtov422PetAndDog.Components.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ContentPage">
+      Title="ContentPage" Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Margin="10">
+                мониторинг животоного
+            </TextBlock>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <WrapPanel  Name="PostsWP">
+
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

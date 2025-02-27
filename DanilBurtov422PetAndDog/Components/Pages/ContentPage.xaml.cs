@@ -23,6 +23,10 @@ namespace DanilBurtov422PetAndDog.Components.Pages
         public ContentPage()
         {
             InitializeComponent();
+            foreach(var i in App.db.Posts.ToList())
+            {
+                PostsWP.Children.Add(new PostUC(i));
+            }
         }
     }
 }
